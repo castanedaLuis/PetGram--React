@@ -25,7 +25,7 @@ export const ListOfCategories = () => {
     }, [showFixed])
 
     const listRender = (fixed) => (
-        <List className={fixed ? 'fixed' : ''}>
+        <List fixed={fixed}>
             {
                 categories.map(category =>
                     <Item key={category.id}>
