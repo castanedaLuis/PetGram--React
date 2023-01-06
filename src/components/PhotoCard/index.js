@@ -9,12 +9,15 @@ export const PhotoCard = ({ id, likes = 0, src = DEFAULT_IMAGE }) => {
     const element = useRef(null)
     const [show, setShow] = useState(false)
 
+    //like-12 
     const key = `like-${id}`
 
+    //like-12 --> regresa true o flase si encuentra algo con la key que le pasamos 
     const [liked, setLiked] = useState(() => {
         try {
             const like = window.localStorage.getItem(key)
-            return like
+            console.log(JSON.parse(like));
+            return JSON.parse(like)
         } catch (e) {
             return false
         }
